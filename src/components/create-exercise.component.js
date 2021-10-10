@@ -74,7 +74,7 @@ export default class CreateExercise extends Component {
     console.log(exercise);
     axios.post('https://karandua.herokuapp.com/exercises/add', exercise)
     .then(res => console.log(res.data));
-   
+    window.location.href = '/';
   }
 
   render() {
