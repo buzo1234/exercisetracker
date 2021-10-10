@@ -32,7 +32,7 @@ export default class ExercisesList extends Component {
   }
 
   deleteExercise(id) {
-    axios.delete('http://karandua.herokuapp.com/exercises/'+id)
+    axios.delete('https://karandua.herokuapp.com/exercises/'+id)
       .then(res => console.log(res.data));
     this.setState({
       exercises: this.state.exercises.filter(el => el._id !== id)
