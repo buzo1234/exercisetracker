@@ -22,7 +22,7 @@ export default class ExercisesList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://karandua.herokuapp.com/exercises/')
+    axios.get('https://karandua.herokuapp.com/exercises/')
      .then(response => {
        this.setState({ exercises: response.data });
      })

@@ -23,7 +23,7 @@ export default class EditExercise extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://karandua.herokuapp.com/exercises/'+this.props.match.params.id)
+    axios.get('https://karandua.herokuapp.com/exercises/'+this.props.match.params.id)
       .then(response => {
         this.setState({
           username: response.data.username,
@@ -36,7 +36,7 @@ export default class EditExercise extends Component {
         console.log(error);
       })
 
-    axios.get('http://karandua.herokuapp.com/users/')
+    axios.get('https://karandua.herokuapp.com/users/')
       .then(response => {
         this.setState({ users: response.data.map(user => user.username) });
       })
