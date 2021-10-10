@@ -25,7 +25,7 @@ export default class CreateUser extends Component {
         console.log(newUser);
         axios.post('https://karandua.herokuapp.com/users/add', newUser)
         .then(res => console.log(res.data));
-        window.location = '/';
+       
         this.setState({
           username: ''
         })
