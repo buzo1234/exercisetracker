@@ -25,10 +25,13 @@ export default class CreateUser extends Component {
         console.log(newUser);
         axios.post('https://karandua.herokuapp.com/users/add', newUser)
         .then(res => console.log(res.data));
-       
+        
+        alert(`User ${this.state.username} added succesfully`);
+
         this.setState({
           username: ''
         })
+        
       }
 
     render() {
