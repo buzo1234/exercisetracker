@@ -18,7 +18,7 @@ export default class CreateUser extends Component {
           sellername: '',
           contact: '',
           address: '',
-          profilepic: '',
+          profilepic: [],
           businessname: '',
           businessdesc: '',
           delivery: '',
@@ -78,7 +78,7 @@ export default class CreateUser extends Component {
         newSeller.append("businessdesc", this.state.businessdesc);
         newSeller.append("delivery", this.state.delivery);
         
-        axios.post('https://karanmahesh.herokuapp.com/sellers/add', newSeller)
+        axios.post('http://localhost:5000/sellers/add', newSeller)
         .then(res => console.log(res.data));
         
         alert(`Seller ${this.state.sellername} added succesfully`);
@@ -87,7 +87,7 @@ export default class CreateUser extends Component {
           sellername: '',
           contact: '',
           address: '',
-          profilepic: '',
+          profilepic: [],
           businessname: '',
           businessdesc: '',
           delivery: ''
