@@ -79,10 +79,8 @@ export default class CreateUser extends Component {
         newSeller.append("delivery", this.state.delivery);
         
         axios.post('https://karanmahesh.herokuapp.com/sellers/add', newSeller)
-        .then(res => console.log(res.data));
+        .then(res => alert(res.data));
         
-        alert(`Seller ${this.state.sellername} added succesfully`);
-
         this.setState({
           sellername: '',
           contact: '',
