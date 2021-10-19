@@ -18,7 +18,7 @@ export default class CreateUser extends Component {
           sellername: '',
           contact: '',
           address: '',
-          profilepic: null,
+          profilepic: '',
           businessname: '',
           businessdesc: '',
           delivery: '',
@@ -87,7 +87,7 @@ export default class CreateUser extends Component {
           sellername: '',
           contact: '',
           address: '',
-          profilepic: null,
+          profilepic: '',
           businessname: '',
           businessdesc: '',
           delivery: ''
