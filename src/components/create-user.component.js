@@ -18,7 +18,7 @@ export default class CreateUser extends Component {
           sellername: '',
           contact: '',
           address: '',
-          profilepic: '',
+          profilepic: null,
           businessname: '',
           businessdesc: '',
           delivery: '',
@@ -84,7 +84,13 @@ export default class CreateUser extends Component {
         alert(`Seller ${this.state.sellername} added succesfully`);
 
         this.setState({
-          sellername: ''
+          sellername: '',
+          contact: '',
+          address: '',
+          profilepic: null,
+          businessname: '',
+          businessdesc: '',
+          delivery: ''
         })
 
         
@@ -124,12 +130,11 @@ export default class CreateUser extends Component {
               </div>
               <div className="form-group"> 
                 <label>Profile Pic / Business Pic: </label>
-                <input type="file" onChange={this.fileSelectedHandler}/>
+                <input type="file" name="profilepic"  onChange={this.fileSelectedHandler}/>
               </div>
               <div className="form-group"> 
                 <label>Business name: </label>
                 <input  type="text"
-                    required
                     className="form-control"
                     value={this.state.businessname}
                     onChange={this.onChangeBusinessname}
@@ -138,7 +143,6 @@ export default class CreateUser extends Component {
               <div className="form-group"> 
                 <label>Business Description: </label>
                 <input  type="text"
-                    required
                     className="form-control"
                     value={this.state.businessdesc}
                     onChange={this.onChangeBusinessdesc}
