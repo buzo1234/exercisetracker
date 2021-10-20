@@ -16,10 +16,10 @@ export default class Navbar extends Component {
           <Link to="/create" className="nav-link">Add_Product</Link>
           </li>
           <li className="navbar-item">
-          <Link to="/user" className="nav-link">Add_SubCategory</Link>
+          <Link to="/subcategory" className="nav-link">Add_SubCategory</Link>
           </li>
           <li className="navbar-item">
-          <Link to="/user" className="nav-link">Add_Category</Link>
+          <Link to="/category" className="nav-link">Add_Category</Link>
           </li>
           <li className="navbar-item">
           <Link to="/user" className="nav-link">Add_Seller</Link>
