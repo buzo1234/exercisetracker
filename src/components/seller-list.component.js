@@ -30,7 +30,7 @@ export default class SellerList extends Component {
   }
 
   deleteProduct(id){
-    axios.delete('https://karanmahesh.herokuapp.com/products'+id)
+    axios.delete('https://karanmahesh.herokuapp.com/products/'+id)
     .then(res =>alert(res.data));
     this.setState({
       products: this.state.products.filter(el => el._id !== id)
