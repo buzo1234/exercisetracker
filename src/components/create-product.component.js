@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {useState} from 'react';
-
 
 
 export default class CreateProduct extends Component {
@@ -148,7 +146,7 @@ export default class CreateProduct extends Component {
         sellerid: '',
         categoryid: '',
         productdesc:'',
-        productimg: [],
+        productimg: undefined,
         productprice: '',
         timerequired: '',
         fragile: ''
@@ -165,7 +163,7 @@ export default class CreateProduct extends Component {
         <div className="form-group"> 
             <label>Seller Name: </label>
             <select ref="userInput"
-                required
+                
                 className="form-control"
                 value={this.state.sellerid}
                 onChange={this.onChangeSellerid}>
@@ -183,7 +181,7 @@ export default class CreateProduct extends Component {
           <div className="form-group"> 
             <label>Sub Category Name: </label>
             <select ref="userInput"
-                required
+                
                 className="form-control"
                 value={this.state.categoryid}
                 onChange={this.onChangeCategoryid}>
@@ -201,7 +199,7 @@ export default class CreateProduct extends Component {
           <div className="form-group"> 
             <label>Product Name: </label>
             <input  type="text"
-                required
+                
                 className="form-control"
                 value={this.state.productname}
                 onChange={this.onChangeProductname}
@@ -216,7 +214,7 @@ export default class CreateProduct extends Component {
           <div className="form-group"> 
             <label>Product Description: </label>
             <input  type="text"
-                required
+                
                 className="form-control"
                 value={this.state.productdesc}
                 onChange={this.onChangeProductdesc}
@@ -225,7 +223,7 @@ export default class CreateProduct extends Component {
           <div className="form-group"> 
             <label>Product Price: </label>
             <input  type="number"
-                required
+                
                 className="form-control"
                 value={this.state.productprice}
                 onChange={this.onChangeProductprice}
@@ -234,7 +232,7 @@ export default class CreateProduct extends Component {
           <div className="form-group"> 
             <label>Time Required: </label>
             <input  type="text"
-                required
+                
                 className="form-control"
                 value={this.state.timerequired}
                 onChange={this.onChangeTimerequired}
@@ -243,7 +241,7 @@ export default class CreateProduct extends Component {
           <div className="form-group"> 
             <label>Fragile: (true/fasle) </label>
             <input  type="text"
-                required
+                
                 className="form-control"
                 value={this.state.fragile}
                 onChange={this.onChangeFragile}

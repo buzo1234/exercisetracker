@@ -23,7 +23,6 @@ export default class CreateUser extends Component {
           businessname: '',
           businessdesc: '',
           delivery: '',
-          loading: false
         };
       };
 
@@ -82,7 +81,6 @@ export default class CreateUser extends Component {
         
         
         console.log([...newSeller]);
-        this.setState({loading:true})
         axios.post('https://karanmahesh.herokuapp.com/sellers/add', newSeller)
         .then(res => alert(res.data));
         
@@ -94,7 +92,6 @@ export default class CreateUser extends Component {
           businessname: '',
           businessdesc: '',
           delivery: '',
-          loading: false
         })
 
         
@@ -162,7 +159,7 @@ export default class CreateUser extends Component {
                     />
               </div>
               <div>
-                {this.state.loading ? <h1>Loading...</h1> : ''}
+                
 
               </div>
               <div className="form-group">
