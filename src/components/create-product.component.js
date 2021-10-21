@@ -128,10 +128,15 @@ export default class CreateProduct extends Component {
     newProduct.append("sellerid", this.state.sellerid);
     newProduct.append("categoryid", this.state.categoryid);
     newProduct.append("productdesc", this.state.productdesc);
-
-    for (const key of Object.keys(this.state.productimg)) {
-        newProduct.append('productimg', this.state.productimg[key])
+    if(this.state.productimg === null){
+      newProduct.append("productimg", null);
     }
+    else{
+      for (const key of Object.keys(this.state.productimg)) {
+        newProduct.append('productimg', this.state.productimg[key])
+      }
+    }
+    
 
     newProduct.append("productprice", this.state.productprice);
     newProduct.append("timerequired", this.state.timerequired);

@@ -8,9 +8,15 @@ const Product = props => (
     <td>{props.product.sellerid.sellername}</td>
     <td>{props.product.categoryid.subcategoryname}</td>
     <td>{props.product.productname}</td>
+    <td><img src={props.product.productimg[0]} alt="" height="40" /></td>
+    <td>{props.product.productdesc}</td>
+    <td>{props.product.productprice}</td>
+    <td>{props.product.timerequired}</td>
+    <td>{props.product.fragile.toString()}</td>
     <td><a href="#" onClick={() => {props.deleteProduct(props.product._id)}}>delete</a></td>
   </tr>
 )
+
 
 export default class SellerList extends Component {
   constructor(props) {
@@ -53,10 +59,15 @@ export default class SellerList extends Component {
         <table className="table">
           <thead className="thead-light">
             <tr>
-              <th>Profile Pic</th>
+              <th>ProPic</th>
               <th>Seller name</th>
-              <th>Sub Category</th>
-              <th>Product name</th>
+              <th>SubCategory</th>
+              <th>Name</th>
+              <th>Img</th>
+              <th>Desc</th>
+              <th>Price</th>
+              <th>Time</th>
+              <th>Fragile</th>
               <th>Actions</th>
             </tr>
           </thead>
