@@ -20,7 +20,7 @@ export default class CreateProduct extends Component {
       sellerid:'',
       categoryid:'',
       productname: '',
-      productimg:undefined,
+      productimg:null,
       productdesc: '',
       productprice: 0,
       timerequired:'',
@@ -146,7 +146,7 @@ export default class CreateProduct extends Component {
         sellerid: '',
         categoryid: '',
         productdesc:'',
-        productimg: undefined,
+        productimg: null,
         productprice: '',
         timerequired: '',
         fragile: ''
