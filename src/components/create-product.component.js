@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {useState} from 'react';
+
+
 
 export default class CreateProduct extends Component {
   constructor(props) {
@@ -27,7 +30,8 @@ export default class CreateProduct extends Component {
       categories: [],
       sellers: []
     }
-  }
+  };
+  
 
   componentDidMount() {
     axios.get('https://karanmahesh.herokuapp.com/subcategories')
@@ -153,6 +157,7 @@ export default class CreateProduct extends Component {
   };
 
   render() {
+
     return (
       <div>
         <h3>Add a Product</h3>

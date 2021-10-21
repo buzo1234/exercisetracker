@@ -8,13 +8,14 @@ const Product = props => (
     <td>{props.product.sellerid.sellername}</td>
     <td>{props.product.categoryid.subcategoryname}</td>
     <td>{props.product.productname}</td>
-    
+    <td><a href="/" onClick={() => {props.deleteProduct(props.product._id)}}>delete</a></td>
   </tr>
 )
 
 export default class SellerList extends Component {
   constructor(props) {
     super(props);
+    this.deleteProduct = this.deleteProduct.bind(this);
     this.state = {products: []};
   }
 
@@ -28,10 +29,18 @@ export default class SellerList extends Component {
      })
   }
 
+  deleteProduct(id){
+    axios.delete('http://karanmahesh.herokuapp.com/products'+id)
+    .then(res =>alert(res.data));
+    this.setState({
+      products: this.state.products.filter(el => el._id !== id)
+    })
+  }
+
 
   productList() {
     return this.state.products.map(currentproduct => {
-      return <Product product={currentproduct} key={currentproduct._id}/>;
+      return <Product product={currentproduct} deleteProduct={this.deleteProduct} key={currentproduct._id}/>;
     })
   }
 
@@ -46,6 +55,7 @@ export default class SellerList extends Component {
               <th>Seller name</th>
               <th>Sub Category</th>
               <th>Product name</th>
+              <th>Actions</th>
             </tr>
           </thead>
           
