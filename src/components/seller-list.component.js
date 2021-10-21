@@ -8,7 +8,7 @@ const Product = props => (
     <td>{props.product.sellerid.sellername}</td>
     <td>{props.product.categoryid.subcategoryname}</td>
     <td>{props.product.productname}</td>
-    <td><a href="/" onClick={() => {props.deleteProduct(props.product._id)}}>delete</a></td>
+    <td><a href="#" onClick={() => {props.deleteProduct(props.product._id)}}>delete</a></td>
   </tr>
 )
 
