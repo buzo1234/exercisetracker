@@ -12,6 +12,7 @@ export default class CreateUser extends Component {
         this.onChangeBusinessname = this.onChangeBusinessname.bind(this);
         this.onChangeBusinessdesc = this.onChangeBusinessdesc.bind(this);
         this.onChangeDelivery = this.onChangeDelivery.bind(this);
+      
 
         this.onSubmit = this.onSubmit.bind(this);
         this.state = {
@@ -22,6 +23,7 @@ export default class CreateUser extends Component {
           businessname: '',
           businessdesc: '',
           delivery: '',
+          loading: false
         };
       };
 
@@ -78,7 +80,9 @@ export default class CreateUser extends Component {
         newSeller.append("businessdesc", this.state.businessdesc);
         newSeller.append("delivery", this.state.delivery);
         
+        
         console.log([...newSeller]);
+        this.setState({loading:true})
         axios.post('https://karanmahesh.herokuapp.com/sellers/add', newSeller)
         .then(res => alert(res.data));
         
@@ -89,7 +93,8 @@ export default class CreateUser extends Component {
           profilepic: [],
           businessname: '',
           businessdesc: '',
-          delivery: ''
+          delivery: '',
+          loading: false
         })
 
         
@@ -156,7 +161,7 @@ export default class CreateUser extends Component {
                     onChange={this.onChangeDelivery}
                     />
               </div>
-          
+              {this.state.loading ? <h1>Loading...</h1> : ''}
               <div className="form-group">
                 <input type="submit" value="Create Seller" className="btn btn-primary" />
               </div>

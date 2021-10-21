@@ -20,6 +20,7 @@ export default class SellerList extends Component {
   }
 
   componentDidMount() {
+    
     axios.get('https://karanmahesh.herokuapp.com/products/')
      .then(response => {
        this.setState({ products: response.data });
@@ -27,6 +28,7 @@ export default class SellerList extends Component {
      .catch((error) => {
         console.log(error);
      })
+     
   }
 
   deleteProduct(id){
@@ -58,7 +60,6 @@ export default class SellerList extends Component {
               <th>Actions</th>
             </tr>
           </thead>
-          
             <tbody>
             { this.productList() }
             </tbody>
