@@ -161,7 +161,10 @@ export default class CreateUser extends Component {
                     onChange={this.onChangeDelivery}
                     />
               </div>
-              {this.state.loading ? <h1>Loading...</h1> : ''}
+              <div>
+                {this.state.loading ? <h1>Loading...</h1> : ''}
+
+              </div>
               <div className="form-group">
                 <input type="submit" value="Create Seller" className="btn btn-primary" />
               </div>
